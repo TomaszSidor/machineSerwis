@@ -20,8 +20,6 @@ public class MachineController {
     @Autowired
     private MachineService machineService;
 
-    @Autowired
-    private AccountService accountService;
 
     @GetMapping("/list")
     public String getMachineList (Model model){
@@ -36,7 +34,7 @@ public class MachineController {
     }
 
     @PostMapping("/add")
-    public String addNewMachine (Machine machine , Principal principal){
+    public String addNewMachine (Machine machine, Principal principal){
         machineService.addNew(machine, principal.getName());
         return "redirect:/machine/list";
     }

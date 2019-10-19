@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:replace="fragments :: styleLinks" th:remove="tag"></th:block>
+    <meta charset="UTF-8">
+    <title>Task Form</title>
+</head>
+<body>
+<th:block th:replace="fragments :: navigator" th:remove="tag"></th:block>
+
+<form th:action="@{/task/add}" method="post">
+    <input class="form-control" id="machineId" type="hidden" name="machineId" th:value="${machineId}">
+    <div class="content-container">
+        <div class="container">
+            <div class="row col-12">
+                <div class="row col-12">
+                    <h1>Task form</h1>
+                </div>
+                <div class="row col-12">
+                    <div class="col-6">
+                        <label for="taskName">Task Name:</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" id="taskName" type="text" name="name">
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <div class="col-6">
+                        <label for="description">description:</label>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" id="description" type="text" name="description">
+                    </div>
+                </div>
+                <div class="row col-12">
+                    <div class="col-6">
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<th:block th:replace="fragments :: footer" th:remove="tag"></th:block>
+<th:block th:replace="fragments :: jsScripts" th:remove="tag"></th:block>
+</body>
+</html>

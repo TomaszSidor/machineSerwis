@@ -24,14 +24,20 @@
             <div class="col-2" th:text="${machine.getName()}"></div>
             <div class="col-3" th:text="${machine.getDescription()}"></div>
             <div class="col-2" th:text="${machine.getOwner().getUsername()}"></div>
-            <div class="col-3" th:text="${machine.getTasks()}"></div>
-<!--            <div class="row col-3">-->
-<!--                <div class="col-3">-->
-<!--                    <a th:href="@{/admin/account/remove(accountId=${account.getId()})}">-->
-<!--                        <button th:disabled="${account.isAdmin()}" type="button" class="btn btn-danger">Remove-->
-<!--                        </button>-->
-<!--                    </a>-->
-<!--                </div>-->
+<!--            <div class="col-3" th:text="${machine.getTasks()}"></div>-->
+            <div class="row col-3">
+                <div class="col-3">
+                    <a th:href="@{/task/list(machine=${machine.getId()})}">
+                        <button type="button" class="btn btn-primary">TaskList
+                        </button>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <a th:href="@{/task/add(machine=${machine.getId()})}">
+                        <button type="button" class="btn btn-primary">Add Task
+                        </button>
+                    </a>
+                </div>
 <!--                <div class="col-3">-->
 <!--                    <a th:href="@{/admin/account/toggleLock(accountId=${account.getId()})}">-->
 <!--                        <button type="button" class="btn btn-primary"-->
@@ -53,7 +59,7 @@
 <!--                        </button>-->
 <!--                    </a>-->
 <!--                </div>-->
-<!--            </div>-->
+            </div>
         </div>
     </div>
 </div>
