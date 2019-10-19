@@ -1,6 +1,6 @@
 package com.j24.security.template.model;
 
-public enum  TodoTaskStatus {
+public enum TaskStatus {
         NEW, ACCEPTED, REJECTED
     }
 

@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,7 +26,9 @@ public class Task {
     private LocalDateTime timeFinished;
 
     @Enumerated(value = EnumType.STRING)
-    private TodoTaskStatus todoTaskStatus;
+    private TaskStatus taskStatus;
+    @Enumerated(value = EnumType.STRING)
+    private TaskProgressStatus taskProgressStatus;
 
     @ManyToOne()
     private Machine machine;
@@ -35,7 +38,7 @@ public class Task {
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "task")
-    private Comment comment;
+    private List<Comment> comments;
 
 
 }
