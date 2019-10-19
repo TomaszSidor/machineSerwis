@@ -25,6 +25,9 @@
                     <li class="nav-item">
                         <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/account/list}">User list</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/machine/list}">Machine list</a>
+                    </li>
                 </ul>
                 <div class="mt-2 mt-md-0">
                     <ul class="navbar-nav mr-auto">

@@ -52,8 +52,8 @@ public class Account {
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @OneToMany
-    private Task task;
+    @OneToMany(mappedBy = "owner")
+    private List<Task> task;
 
 
 
